@@ -1,0 +1,4 @@
+verify_options:
+  bound: 20
+  # horn-opsem-max-symb-alloc: 8192
+  # horn-bv2-lambdas: false

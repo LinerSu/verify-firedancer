@@ -1,0 +1,8 @@
+#pragma once
+/* clang-format off */
+
+#ifndef MAX_BUFFER_SIZE
+#define MAX_BUFFER_SIZE @MAX_BUFFER_SIZE@
+#endif
+
+/* clang-format on */

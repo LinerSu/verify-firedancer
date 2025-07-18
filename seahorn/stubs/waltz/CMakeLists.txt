@@ -1,0 +1,14 @@
+add_library(fd_aes_base_ref_override fd_aes_base_ref_override.c)
+sea_attach_bc(fd_aes_base_ref_override)
+
+add_library(fd_tls_helper fd_tls_helper.c)
+sea_attach_bc(fd_tls_helper)
+
+add_library(fd_tls_proto_override fd_tls_proto_override.c)
+sea_attach_bc(fd_tls_proto_override)
+
+add_library(fd_sha_256_override fd_sha_256_override.c)
+sea_attach_bc(fd_sha_256_override)
+
+add_library(fd_ed25519_user_override fd_ed25519_user_override.c)
+sea_attach_bc(fd_ed25519_user_override)

@@ -1,0 +1,9 @@
+build*
+debug
+cex
+data
+exper
+firedancer
+compile_commands.json
+__pycache__
+CMakeUserPresets.json

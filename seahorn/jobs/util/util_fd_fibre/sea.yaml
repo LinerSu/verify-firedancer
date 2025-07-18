@@ -1,0 +1,5 @@
+verify_options:
+  bound: 10
+  # horn-opsem-max-symb-alloc: 8192
+  # horn-bv2-lambdas: false
+  horn-bv2-tracking-mem: ''
