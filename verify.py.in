@@ -102,6 +102,12 @@ def main(argv):
                 default=False,
                 help="Pass --dry-run to yama",
             )
+            argp.add_argument(
+                "--domain", type=str,
+                choices=["fixed-tvpi-dbm", "zones", "pk-pplite", "pk"],
+                dest='domain', default="zones",
+                help="Choose an abstract domain: fixed-tvpi-dbm, zones, pk-pplite, or pk.",
+            )
             argp.add_argument("extra", nargs=argparse.REMAINDER)
             return argp
 
@@ -136,10 +142,13 @@ def main(argv):
                 vac_config = os.path.join(script_dir, "yaml", "sea.vac.yaml")
                 cmd.extend(["-y", vac_config])
 
-            # Crab in Opsem config
+            # crab config
             if args.crab:
                 crab_config = os.path.join(script_dir, "yaml", "sea.crab.yaml")
                 cmd.extend(["-y", crab_config])
+                domain_config = os.path.join(script_dir, 'yaml', 'domain-yaml',
+                                            f'crab.{args.domain}.yaml')
+                cmd.extend(['-y', domain_config])
 
             # pcond config
             if args.pcond:
