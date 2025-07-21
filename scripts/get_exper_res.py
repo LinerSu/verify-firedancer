@@ -154,7 +154,7 @@ def collect_stat_from_ctest_log(outfile, use_crab):
     if args.seahorn:
         output_file_name = f'AI4BMC_{args.domain}' if "--crab" in extra else "SEABMC"
         output_dir_name = 'y2' if os.getenv('VERIFY_FLAGS') else 'z3'
-        log_path = os.path.join(os.path.abspath('../'), 'res/outputs', output_dir_name)
+        log_path = os.path.join(os.path.abspath('../'), 'res/vstte/outputs', output_dir_name)
         os.makedirs(log_path, exist_ok=True)
         file_ext_name = 'Yices2' if os.getenv('VERIFY_FLAGS') else 'Z3'
         new_log_name = f'{output_file_name}_{file_ext_name}.log'
@@ -163,7 +163,7 @@ def collect_stat_from_ctest_log(outfile, use_crab):
         log_path = os.path.join(log_path, latest_log)
         data = read_brunchstat_from_log(os.path.join(test_tmpdir, latest_log))
         new_csv_name = f'{output_file_name}_{file_ext_name}.csv'
-        csv_path = os.path.join(os.path.abspath('../'), 'res/data', new_csv_name)
+        csv_path = os.path.join(os.path.abspath('../'), 'res/vstte/data', new_csv_name)
         write_brunchstat_into_csv(data, csv_path)
     elif args.symbiotic:
         data = read_symbiotic_bruchstat_from_log(os.path.join(
